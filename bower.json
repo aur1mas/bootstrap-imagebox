@@ -1,0 +1,25 @@
+{
+  "name": "bootstrap-imagebox",
+  "version": "0.0.1",
+  "authors": [
+    "Weber Liu <weberliu@gmail.com>"
+  ],
+  "description": "A image lightbox for bootstrap",
+  "keywords": [
+    "lightbox",
+    "bootstrap",
+    "image"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/weberliu/bootstrap-imagebox",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
