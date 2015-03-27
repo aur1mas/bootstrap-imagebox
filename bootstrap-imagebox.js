@@ -103,4 +103,4 @@
 
   $(document).on('click.bs.bootstrapImagebox.data-api', toggle, BootstrapImagebox.prototype.toggle)
   $(document).on('keydown.bs.bootstrapImagebox.data-api', toggle, BootstrapImagebox.prototype.escape)
-}(jQuery)
+}(jQuery);
