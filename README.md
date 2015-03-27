@@ -12,7 +12,7 @@ bower install bootstrap-imagebox —save
 ```
 <script src=“bootstrap.min.js”></script>
 <script src=“bootstrap-imagebox.min.js”></script>
-<link href=“bootstrap.min.css”></script>
+<link href=“bootstrap.min.css”>
 
 …
 
