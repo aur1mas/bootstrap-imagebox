@@ -8,7 +8,9 @@
   "keywords": [
     "lightbox",
     "bootstrap",
-    "image"
+    "image",
+    "modal",
+    "dialog"
   ],
   "license": "MIT",
   "homepage": "https://github.com/weberliu/bootstrap-imagebox",

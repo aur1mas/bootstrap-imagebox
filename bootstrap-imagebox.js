@@ -4,10 +4,15 @@
   // BOOTSTRAP-IMAGEBOX CLASS DEFINITION
   // ======================
 
-  var toggle = '[data-toggle="imagebox"]'
-  var html = '<div id="bootstrap-imagebox" class="modal fade" role="dialog" aria-hidden="true">'+
+  var toggle = '[data-toggle="imagebox"]',
+      selector = 'div#bootstrapImagebox',
+      html = '<div id="bootstrapImagebox" class="modal fade" role="dialog" aria-hidden="true">'+
       '<div class="modal-dialog">'+
         '<div class="modal-content">'+
+          // '<div class="modal-header">'+
+          //   '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
+          //   '<h4 class="modal-title">Modal title</h4>'+
+          // '</div>'+
           '<div class="modal-body">'+
             '<div class="text-center imagebox-title"></div>'+
           '</div>'+
@@ -29,7 +34,7 @@
 
     if (e) e.preventDefault()
 
-    var $parent = $('div.bootstrap-imagebox')
+    var $parent = $(selector)
     if ($parent.length === 0) $parent = $(html).appendTo($('body'))
 
     var body = $parent.find('.modal-body'),
@@ -43,7 +48,7 @@
     if (dialogSize === 'sm') dialog.addClass('modal-sm')
 
 
-    $parent.modal({show: true, backdrop: true, keyboard: true})
+    $parent.modal('show')
     .on('shown.bs.modal', function () {
         image.slideDown(function () {titleBar.slideDown('fast') })
       })
@@ -51,12 +56,17 @@
         $('body').removeClass('modal-open')
         $('.modal-backdrop').fadeOut(function () { this.remove() })
         image.remove()
-        title.text('')
+        titleBar.text('')
+        dialog.removeClass('modal-lg').removeClass('modal-sm')
       })
   }
 
-  function buildModalDialog() {
+  BootstrapImagebox.prototype.escape = function (e) {
+    var $parent = $(selector)
 
+    if ($parent.length === 0 && $parent.css('display') != 'block') return
+
+    $parent.modal('hide')
   }
 
 
@@ -92,4 +102,5 @@
   // ==============
 
   $(document).on('click.bs.bootstrapImagebox.data-api', toggle, BootstrapImagebox.prototype.toggle)
+  $(document).on('keydown.bs.bootstrapImagebox.data-api', toggle, BootstrapImagebox.prototype.escape)
 }(jQuery)
