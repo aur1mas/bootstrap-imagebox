@@ -4,6 +4,9 @@
   "authors": [
     "Weber Liu <weberliu@gmail.com>"
   ],
+  "main": [
+    "bootstrap-imagebox.js"
+  ],
   "description": "A image lightbox for bootstrap",
   "keywords": [
     "lightbox",
